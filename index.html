@@ -1,0 +1,609 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My GitHub Portfolio</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f4f6fb;
+    color: #222;
+}
+
+header {
+    background: #172554;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+nav {
+    background: #1e3a8a;
+    padding: 15px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+nav a:hover {
+    color: #facc15;
+}
+
+section {
+    padding: 35px 8%;
+}
+
+h2 {
+    color: #1e3a8a;
+    margin-bottom: 20px;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    background: white;
+}
+
+.profile {
+    width: 190px;
+    height: 190px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #1e3a8a;
+}
+
+.hero-text {
+    max-width: 550px;
+}
+
+.hero-text h1 {
+    color: #1e3a8a;
+    font-size: 35px;
+    margin-bottom: 12px;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px #00000015;
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    height: 170px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+button, .btn {
+    background: #1e3a8a;
+    color: white;
+    padding: 11px 20px;
+    border: none;
+    border-radius: 6px;
+    margin-top: 12px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
+button:hover, .btn:hover {
+    background: #2563eb;
+}
+
+input, select {
+    padding: 12px;
+    margin: 8px 0;
+    width: 100%;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+}
+
+.page {
+    display: none;
+    min-height: 70vh;
+}
+
+.page.active {
+    display: block;
+}
+
+.certificate {
+    cursor: pointer;
+}
+
+.certificate img {
+    height: 200px;
+    object-fit: contain;
+}
+
+#result {
+    margin-top: 20px;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+footer {
+    background: #172554;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.back {
+    margin-bottom: 20px;
+}
+
+@media(max-width:600px) {
+    nav a {
+        display: inline-block;
+        margin: 7px;
+    }
+
+    .hero-text h1 {
+        font-size: 27px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>MY PERSONAL PORTFOLIO</h1>
+    <p>Student | BCA | Web Developer</p>
+</header>
+
+<nav>
+    <a onclick="showPage('home')">Home</a>
+    <a onclick="showPage('about')">About</a>
+    <a onclick="showPage('education')">Education</a>
+    <a onclick="showPage('certificates')">Certificates</a>
+    <a onclick="showPage('projects')">Projects</a>
+    <a onclick="showPage('contact')">Contact</a>
+</nav>
+
+<!-- HOME PAGE -->
+<div id="home" class="page active">
+
+<section class="hero">
+
+    <img src="profile.jpg" class="profile"
+         alt="My Profile Photo">
+
+    <div class="hero-text">
+        <h1>Hello, I'm Your Name</h1>
+
+        <h3>Welcome to My Portfolio</h3>
+
+        <p>
+        I am a third-year BCA student interested in
+        programming, web development and technology.
+        I enjoy creating useful software projects.
+        </p>
+
+        <button onclick="showPage('projects')">
+            View My Projects
+        </button>
+    </div>
+
+</section>
+
+</div>
+
+<!-- ABOUT PAGE -->
+<div id="about" class="page">
+
+<section>
+<h2>About Me</h2>
+
+<div class="card">
+<p><b>Name:</b> Vaibhav V Bharadwaj</p><br>
+<p><b>Date of Birth:</b> 07-06-2005</p><br>
+<p><b>Course:</b> Bachelor of Computer Applications</p><br>
+<p><b>Year:</b> 3rd Year BCA</p><br>
+<p><b>College:</b> Kumadvathi First Grade College</p>
+</div>
+</section>
+
+</div>
+
+<!-- EDUCATION PAGE -->
+<div id="education" class="page">
+
+<section>
+<h2>My Education</h2>
+
+<div class="card">
+<h3>Bachelor of Computer Applications (BCA)</h3>
+<p>Kumadvathi First Grade College</p>
+<p>Currently Studying – 3rd Year</p>
+</div>
+
+</section>
+</div>
+
+<!-- CERTIFICATES PAGE -->
+<div id="certificates" class="page">
+
+<section>
+<h2>My Certificates</h2>
+
+<div class="card-container">
+
+<div class="card certificate">
+<img src="infosys.jpg"
+     alt="Certificate 1"
+     onclick="openImage('infosys.jpg')">
+
+<h3>Certificate 1</h3>
+<p>My First Certificate</p>
+
+<button onclick="openImage('infosys.jpg')">
+View Certificate
+</button>
+</div>
+
+<div class="card certificate">
+<img src="ibm.jpg"
+     alt="Certificate 2"
+     onclick="openImage('ibm.jpg')">
+
+<h3>Certificate 2</h3>
+<p>My Second Certificate</p>
+
+<button onclick="openImage('ibm.jpg')">
+View Certificate
+</button>
+</div>
+
+</div>
+</section>
+</div>
+
+<!-- PROJECTS PAGE -->
+<div id="projects" class="page">
+
+<section>
+<h2>My Projects</h2>
+
+<div class="card-container">
+
+<div class="card">
+<h3>Money Management System</h3>
+<p>Manage income, expenses and balance.</p>
+
+<button onclick="showPage('money')">
+View Project
+</button>
+</div>
+
+<div class="card">
+<h3>Bank IFSC Code Finder</h3>
+<p>Search sample bank branch and IFSC details.</p>
+
+<button onclick="showPage('ifsc')">
+View Project
+</button>
+</div>
+
+</div>
+</section>
+</div>
+
+<!-- MONEY MANAGEMENT PROJECT PAGE -->
+<div id="money" class="page">
+
+<section>
+
+<button class="back" onclick="showPage('projects')">
+← Back to Projects
+</button>
+
+<h2>Money Management System</h2>
+
+<div class="card">
+
+<h3>Income and Expense Tracker</h3>
+
+<input type="text" id="description"
+placeholder="Enter description">
+
+<input type="number" id="amount"
+placeholder="Enter amount" min="0.01" step="0.01">
+
+<select id="type">
+<option value="income">Income</option>
+<option value="expense">Expense</option>
+</select>
+
+<button onclick="addTransaction()">
+Add Transaction
+</button>
+
+<h3 id="balance">Balance: ₹0</h3>
+<h3 id="income">Income: ₹0</h3>
+<h3 id="expense">Expense: ₹0</h3>
+
+<h3>Transaction History</h3>
+<ul id="transactions"></ul>
+
+</div>
+</section>
+</div>
+
+<!-- IFSC FINDER PROJECT PAGE -->
+<div id="ifsc" class="page">
+
+<section>
+
+<button class="back" onclick="showPage('projects')">
+← Back to Projects
+</button>
+
+<h2>Bank IFSC Code Finder</h2>
+
+<div class="card">
+
+<h3>Search Bank Details</h3>
+
+<input type="text" id="search"
+placeholder="Enter Bank, City or IFSC Code"
+oninput="searchBank()">
+
+<div id="result">
+Enter a search term to find a sample record.
+</div>
+
+<p style="color:#a16207;margin-top:15px">
+Demo only: the records below are fictional examples,
+not valid bank details for financial transactions.
+</p>
+
+</div>
+</section>
+</div>
+
+<!-- CONTACT PAGE -->
+<div id="contact" class="page">
+
+<section>
+<h2>Contact Me</h2>
+
+<div class="card">
+<p><b>Email:</b> yourmail@gmail.com</p><br>
+<p><b>GitHub:</b>
+<a href="https://github.com/" target="_blank">
+My GitHub Profile
+</a>
+</p><br>
+<p><b>LinkedIn:</b>
+<a href="https://linkedin.com/" target="_blank">
+My LinkedIn
+</a>
+</p>
+</div>
+</section>
+
+</div>
+
+<footer>
+<p>© 2026 Your Name | My Portfolio</p>
+</footer>
+
+<script>
+
+// PAGE NAVIGATION
+
+function showPage(pageId) {
+
+    document.querySelectorAll('.page').forEach(page => {
+        page.classList.remove('active');
+    });
+
+    document.getElementById(pageId).classList.add('active');
+
+    window.scrollTo(0,0);
+}
+
+// OPEN CERTIFICATE IMAGE
+
+function openImage(image) {
+    window.open(image, '_blank');
+}
+
+// MONEY MANAGEMENT
+
+let transactions = JSON.parse(
+    localStorage.getItem("portfolioTransactions") || "[]"
+);
+
+function addTransaction() {
+
+    let description =
+        document.getElementById("description").value.trim();
+
+    let amount =
+        Number(document.getElementById("amount").value);
+
+    let type =
+        document.getElementById("type").value;
+
+    if(description === "" || !Number.isFinite(amount) || amount <= 0) {
+        alert("Please enter a valid description and amount");
+        return;
+    }
+
+    transactions.push({
+        description: description,
+        amount: amount,
+        type: type
+    });
+
+    localStorage.setItem(
+        "portfolioTransactions",
+        JSON.stringify(transactions)
+    );
+
+    document.getElementById("description").value = "";
+    document.getElementById("amount").value = "";
+
+    updateMoney();
+}
+
+function updateMoney() {
+
+    let income = 0;
+    let expense = 0;
+
+    let list = document.getElementById("transactions");
+
+    list.innerHTML = "";
+
+    transactions.forEach(t => {
+
+        if(t.type === "income") {
+            income += t.amount;
+        } else {
+            expense += t.amount;
+        }
+
+        let li = document.createElement("li");
+
+        li.textContent =
+            t.description + " - ₹" + t.amount.toFixed(2) +
+            " (" + t.type + ")";
+
+        list.appendChild(li);
+    });
+
+    document.getElementById("income").innerText =
+        "Income: ₹" + income.toFixed(2);
+
+    document.getElementById("expense").innerText =
+        "Expense: ₹" + expense.toFixed(2);
+
+    document.getElementById("balance").innerText =
+        "Balance: ₹" + (income-expense).toFixed(2);
+}
+
+// BANK IFSC SEARCH - FICTIONAL SAMPLE DATA
+
+const banks = [
+
+    {
+        bank: "Sample National Bank",
+        branch: "Central Branch",
+        city: "Mysuru",
+        ifsc: "SAMPLE0001234"
+    },
+
+    {
+        bank: "Demo Cooperative Bank",
+        branch: "Market Road",
+        city: "Shivamogga",
+        ifsc: "DEMO0005678"
+    },
+
+    {
+        bank: "Example People's Bank",
+        branch: "College Road",
+        city: "Sagara",
+        ifsc: "EXAMP0009012"
+    }
+
+];
+
+function searchBank() {
+
+    let search =
+        document.getElementById("search").value.toLowerCase().trim();
+
+    let result =
+        document.getElementById("result");
+
+    if(search === "") {
+        result.textContent = "Enter a search term.";
+        return;
+    }
+
+    let found = banks.filter(bank => {
+
+        return (
+            bank.bank.toLowerCase().includes(search) ||
+            bank.branch.toLowerCase().includes(search) ||
+            bank.city.toLowerCase().includes(search) ||
+            bank.ifsc.toLowerCase().includes(search)
+        );
+
+    });
+
+    if(found.length > 0) {
+
+        result.innerHTML = "";
+
+        found.forEach(bank => {
+
+            let card = document.createElement("div");
+            card.style.borderBottom = "1px solid #ddd";
+            card.style.padding = "12px";
+
+            let title = document.createElement("h3");
+            title.textContent = bank.bank;
+
+            let details = document.createElement("p");
+            details.textContent =
+                "Branch: " + bank.branch +
+                " | City: " + bank.city;
+
+            let code = document.createElement("p");
+            code.textContent = "IFSC: " + bank.ifsc;
+
+            card.append(title, details, code);
+            result.appendChild(card);
+
+        });
+
+    } else {
+
+        result.textContent = "No matching sample bank found.";
+
+    }
+
+}
+
+// LOAD SAVED TRANSACTIONS
+
+updateMoney();
+
+</script>
+
+</body>
+</html>
